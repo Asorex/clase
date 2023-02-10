@@ -1,17 +1,20 @@
-import { useState } from "react";
+import React, { useContext } from "react";
+import '../style-sheets/opciones.css';
+import { DataContext } from "../context/dataContext";
 
-const Lista = (props) => {
 
-    const [currency, setCurrency] = useState('');
+const Lista = () => {
+
+    const { setContextData } = useContext(DataContext);
 
     return (
-        <div>
-            <label>Currency:
-            <select className="custom-select" id="inputGroupSelect01" onChange={(event) => setCurrency(event.target.value)}>
-                <option value="Dollar" name="dollar"> $ Dollar</option>
-                <option value="Pound" name="pound">£ Pound</option>
-                <option value="Euro" name="euro">€ Euro</option>
-                <option value="Ruppee" name="ruppee">₹ Ruppee</option>
+        <div className="options">
+            <label>Currency: 
+            <select className="custom-options" id="inputGroupSelect01" onChange={(event) => setContextData(event.target.value)}>
+                <option value="$" name="dollar"> $ Dollar</option>
+                <option value="£" name="pound">£ Pound</option>
+                <option value="€" name="euro">€ Euro</option>
+                <option value="₹" name="ruppee">₹ Ruppee</option>
             </select>
             </label>
         </div>

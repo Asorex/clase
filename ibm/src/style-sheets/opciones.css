@@ -1,0 +1,15 @@
+.options {
+    background-color: #48de7a;
+    height: 58px;
+    align-items:end;
+    justify-content: center;
+    color: white;
+    border-radius: 10px;
+    padding: 1rem;
+}
+
+.custom-options {
+    background-color: #48de7a;
+    color: white;
+    border-style: solid;
+}
