@@ -1,28 +1,26 @@
-import React, { useContext, useState } from 'react';
-import { AppContext } from "../context/AppContext";
+import React, { useState } from 'react';
 import '../style-sheets/budget.css'
 import { useDataContext } from '../context/dataContext';
 
 const Budget = ()=> {
     const { contextData } = useDataContext();
 
-    const [ setBudget] = useState('');
+    const [ setBudget ] = useState('0');
+
     
-    if (setBudget < 960) {
-        console.log('ola')
-        return;
-    }
+
 
     return ( 
         <form className='alert alert-secondary'>Budget: {contextData} 
             <input
                 className="tarea-input"
+                id='cost'
                 type='number'
                 name='texto'
                 min='0'
                 max='20000'
                 step='10'
-                onSubmit={(e) => setBudget(e.target.value)}
+                onChange={(e) => setBudget(e.target.value)}             
                 />
         </form>     
     );
